@@ -6,6 +6,9 @@ var GameLayer = cc.LayerColor.extend({
         this.player.setPosition( new cc.Point( screenWidth / 2, screenHeight / 2 ) );
         this.addChild( this.player );
         this.addKeyboardHandlers();
+        this.pillarPair = new PillarPair();
+        this.pillarPair.setPosition( new cc.Point( 700, 300 ) );
+        this.addChild( this.pillarPair );
         this.state = GameLayer.STATES.FRONT;
         this.player.scheduleUpdate();
         return true;
