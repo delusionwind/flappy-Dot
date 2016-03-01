@@ -12,10 +12,15 @@ var PillarPair = cc.Node.extend({
     },
     update: function( dt ) {
         if( this.getPositionX() < 0 ) {
-          this.setPositionX( 800 );
+            this.setPositionX( 800 );
         } else {
-          this.setPositionX( this.getPositionX() - 5 );
+            this.setPositionX( this.getPositionX() - 5 );
         }
 
+    },
+    hit: function( player ) {
+       var playerPos = player.getPosition();
+       var myPos = this.getPosition();
+       return checkPlayerPillarCollision( playerPos.x, playerPos.y, myPos.x, myPos.y );
     }
 });
