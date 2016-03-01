@@ -11,6 +11,7 @@ var GameLayer = cc.LayerColor.extend({
         this.addChild( this.pillarPair );
         this.state = GameLayer.STATES.FRONT;
         this.player.scheduleUpdate();
+        this.pillarPair.scheduleUpdate();
         return true;
     },
     addKeyboardHandlers: function() {
