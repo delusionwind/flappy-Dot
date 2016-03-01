@@ -4,7 +4,7 @@ var GameLayer = cc.LayerColor.extend({
         this.setPosition( new cc.Point( 0, 0 ) );
         this.player = new Player();
         this.player.setPosition( new cc.Point( screenWidth / 2, screenHeight / 2 ) );
-        this.addChild( this.player );
+        this.addChild( this.player, 1 );
         this.addKeyboardHandlers();
         this.pillarPair = null;
         this.state = GameLayer.STATES.FRONT;
@@ -14,7 +14,7 @@ var GameLayer = cc.LayerColor.extend({
 
     createPillarPair: function() {
         this.pillarPair = new PillarPair();
-        this.pillarPair.setPosition( new cc.Point( 700, 300 ) );
+        this.pillarPair.setPosition( new cc.Point( 800, 300 ) );
         this.addChild( this.pillarPair );
         this.pillarPair.scheduleUpdate();
     },
