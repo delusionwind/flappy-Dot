@@ -13,11 +13,15 @@ var PillarPair = cc.Node.extend({
 
     update: function( dt ) {
         if( this.getPositionX() < 0 ) {
+            this.randomPositionY();
             this.setPositionX( 800 );
         } else {
             this.setPositionX( this.getPositionX() - 5 );
         }
+    },
 
+    randomPositionY: function() {
+        this.setPositionY( (Math.random()*300) + 200 );
     },
 
     hit: function( player ) {
