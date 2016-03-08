@@ -17,7 +17,11 @@ var Player = cc.Sprite.extend({
     },
     start: function() {
         this.started = true;
+    },
+    stop: function() {
+	      this.started = false;
     }
+
 });
 Player.JUMPING_VELOCITY = 15;
 Player.G = -1;
